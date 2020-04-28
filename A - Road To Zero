@@ -1,0 +1,21 @@
+#include<iostream>
+#include<algorithm>
+#define lli long long int
+using namespace std;
+int main()
+{
+	lli t;
+	cin >> t;
+	while (t--)
+	{
+		lli x, y;
+		cin >> x >> y;
+		lli a, b;
+		cin >> a >> b;
+		lli minCost, minCost2;
+		minCost = (abs(x-y)*a)+(min(x,y)*b);
+		minCost2 = (x + y)*a;
+		cout << min(minCost, minCost2) << '\n';
+	}
+	return 0;
+}
