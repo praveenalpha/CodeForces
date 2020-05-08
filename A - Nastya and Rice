@@ -1,0 +1,33 @@
+#include<iostream>
+#include<algorithm>
+#include<vector>
+#include<cmath>
+#define lli long long int
+using namespace std;
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	lli t;
+	cin >> t;
+	while (t--)
+	{
+		lli n, a, b, c, d;
+		cin >> n >> a >> b >> c >> d;
+		lli maxTotal = c + d;//2
+		lli minTotal = c - d;//2
+		lli maxCal = n * (a + b);//3
+		lli minCal = n * (a - b);//1
+		/*if (minCal>=minTotal && minCal<=maxTotal)
+			cout << "YES" << '\n';
+		else if (maxCal>=minTotal && maxCal<=maxTotal)
+			cout << "YES" << '\n';
+		else
+			cout << "NO" << '\n';*/
+		if (minCal > maxTotal || maxCal < minTotal)
+			cout << "NO" << '\n';
+		else
+			cout << "YES" << '\n';
+	}
+	return 0;
+}
