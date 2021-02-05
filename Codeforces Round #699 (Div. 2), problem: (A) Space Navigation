@@ -1,0 +1,65 @@
+#include<iostream>
+#include<vector>
+#include<string>
+#include<algorithm>
+#include<limits>
+#include<stack>
+using namespace std;
+vector<vector<int>> dir = {{-1,0}, {1,0},{0,1},{0,-1}};
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int x,y;
+        cin>>x>>y;
+        string s;
+        cin>>s;
+        int row = 0, col = 0;
+        bool flag = false;
+        for(int i=0;i<s.length();i++){
+            if(s[i] == 'U'){
+                if(row + 1 <= y){
+                    row++;
+                    if(row == y && col == x){
+                        flag = true;
+                        break;
+                    }
+                }
+            }
+            else if(s[i] == 'D'){
+                if(row - 1 >= y){
+                    row--;
+                    if(row == y && col == x){
+                        flag = true;
+                        break;
+                    }
+                }
+            }
+            else if(s[i] == 'R'){
+                if(col + 1 <= x){
+                    col++;
+                    if(row == y && col == x){
+                        flag = true;
+                        break;
+                    }
+                }
+            }
+            else if(s[i] == 'L'){
+                if(col - 1 >= x){
+                    col--;
+                    if(row == y && col == x){
+                        flag = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if(flag){
+            cout<<"YES"<<endl;
+        }
+        else{
+            cout<<"NO"<<endl;
+        }
+    }
+    return 0;
+}
